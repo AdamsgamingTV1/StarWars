@@ -1,0 +1,54 @@
+import pygame
+
+class Hra:
+    Screen = None
+    aliens = []
+    Score = 0
+    Životy = 3
+
+    def __init__(self, width, height):
+        pygame.init()
+        self.height = height
+        self.width = width
+        self.screen = pygame.display.set_mode((width, height))
+        self.clock = pygame.time.Clock()
+        done = False
+
+    while not done:
+        for event in pygame.event.get():
+            if event.type = event.QUIT:
+                done = True
+            
+    pygame.display.flip()
+    self.clock.till(120)
+    self.screen.fill((0, 0, 0,))
+
+
+class Hrdina:
+    def __init__(self, x, y, game)
+        self.x = x
+        self.y = y
+        self.game = game
+
+
+
+
+class Ufoun:
+     def __init__(self, x, y, game)
+        self.x = x
+        self.y = y
+        self.game = game
+
+    def draw(self):
+        pygame.draw.rect(self.game.screen,
+                        81, 47, 90),
+                        pygame.rect
+
+class Raketa:
+    def __init__(self, x, y, game)
+        self.x = x
+        self.y = y
+        self.game = game
+
+if __name__ == "__main__"
+    game = Game(600, 400)
