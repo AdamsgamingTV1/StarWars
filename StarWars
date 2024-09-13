@@ -1,54 +1,37 @@
-import pygame
+import random
 
 class Hra:
-    Screen = None
-    aliens = []
-    Score = 0
-    Životy = 3
+    def __init__(self):
+        self.choices = ["kamen", "nuzky", "papir"]
 
-    def __init__(self, width, height):
-        pygame.init()
-        self.height = height
-        self.width = width
-        self.screen = pygame.display.set_mode((width, height))
-        self.clock = pygame.time.Clock()
-        done = False
+    def get_user_choice(self):
 
-    while not done:
-        for event in pygame.event.get():
-            if event.type = event.QUIT:
-                done = True
+
+    def get_computer_choice(self):
+        return random.choice(self.choices)
+
+    def determine_winner(self, computer_choice, user_choice):
+        if user_choice == computer_choice:
+            return "Nerozhodne!"
+            elif (user_choice == "kamen" and computer_choice == "nuzky") or /
+            (user_choice == "nuzky" and computer_choice == "papir") or /
+            (user_choice == "kamen" and computer_choice == "papir") or /
+            (user_choice == "nuzky" and computer_choice == "kamen"):
+            return "Vyhrals!"
+                else:
+                    return "Prohrals"
+
             
-    pygame.display.flip()
-    self.clock.till(120)
-    self.screen.fill((0, 0, 0,))
-
-
-class Hrdina:
-    def __init__(self, x, y, game)
-        self.x = x
-        self.y = y
-        self.game = game
 
 
 
+    def play(self):
+        user_choice = self.get_user_choice()
+        computer_choice = self.get_user_choice()
+        print(f"Pocitac vybral:  {computer_choice}")
+        result = self.determine_winner(computer_choice, user_choice)
+        print(result)
 
-class Ufoun:
-     def __init__(self, x, y, game)
-        self.x = x
-        self.y = y
-        self.game = game
-
-    def draw(self):
-        pygame.draw.rect(self.game.screen,
-                        81, 47, 90),
-                        pygame.rect
-
-class Raketa:
-    def __init__(self, x, y, game)
-        self.x = x
-        self.y = y
-        self.game = game
-
-if __name__ == "__main__"
-    game = Game(600, 400)
+if __name__ = "__main__":
+    game = Game()
+    game.play()
